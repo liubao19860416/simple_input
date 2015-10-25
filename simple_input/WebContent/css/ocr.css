@@ -1,0 +1,107 @@
+
+		
+@CHARSET "UTF-8";
+
+		/*body*/
+		body
+		{
+			width:auto;
+			height:21cm;
+			border:1px solid;
+		}
+				
+		/*案卷信息*/
+		table.tb1
+		{
+			//border: solid 1px;
+			width:15cm;
+			height:5cm;
+			padding:0cm 0cm 0cm 0cm;
+			margin:1cm 0cm -0.5cm 1cm;
+		}
+		
+		/*卷内信息*/
+		div.grid
+		{
+			margin: 1cm 0cm 0cm 1cm;	
+		}
+		div.grid1
+		{
+			width:15cm;
+			height:5cm;
+			border:1px solid;
+			overflow: scroll;
+		}
+		table.tb2
+		{
+			width:50cm;
+		}
+		
+		/*表格*/
+		div.grid_in
+		{	
+			width:50cm;
+			height:6cm;
+			border:1px solid;
+		}
+		
+		/*卷内信息-输入 margin外边距 padding内边距*/
+		div.input2
+		{
+			width:15cm;
+			height:8cm;
+			//border:1px solid;
+			padding:0cm 0cm -10cm 0cm;
+			margin:0cm 0cm 1cm 1cm;
+		}
+		
+		/*图片显示*/
+		div.image_out
+		{	
+			margin:-19cm 1cm 1cm 22cm;
+		}
+		
+		div.image_in
+		{	
+			width:15cm;
+			height:20cm;
+			border: solid 1px;
+			overflow: scroll;
+		}
+		
+		div.list
+		{
+			width:2cm;
+			height:18.6cm;
+			border: solid 1px;
+			overflow: scroll;
+			padding:0cm 0cm 0cm 0cm;
+			margin:-20cm 0cm 1cm 17cm;
+		}
+		
+		div.image
+		{
+			width:auto;
+			height:18.6cm;
+			border: solid 1px;
+			overflow: scroll;
+			margin:-19.65cm 1cm 1cm 19.05cm;
+		}
+		
+		div.coord
+		{
+			display:none;
+			border: solid 1px;
+			margin:-0.5cm 0cm 0cm 1cm;
+		}
+		
+		div.other
+		{
+			//border: solid 1px;
+			margin:2cm 0cm 0cm 1cm;
+		}
+		
+		
+
+		
+		

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+           http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+		
+			<!-- 定义数据源Bean，使用C3P0数据源实现 -->
+			<bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource" destroy-method="close">
+				<!-- 指定连接数据库的驱动 -->
+				<property name="driverClass" value="com.mysql.jdbc.Driver"/>
+				<!-- 指定连接数据库的URL -->
+				<property name="jdbcUrl" value="jdbc:mysql://localhost/struts2"/>
+				<!-- 指定连接数据库的用户名 -->
+				<property name="user" value="root"/>
+				<!-- 指定连接数据库的密码 -->
+				<property name="password" value="root"/>
+				<!-- 指定连接数据库连接池的最大连接数 -->
+				<property name="maxPoolSize" value="20"/>
+				<!-- 指定连接数据库连接池的最小连接数 -->
+				<property name="minPoolSize" value="1"/>
+				<!-- 指定连接数据库连接池的初始化连接数 -->
+				<property name="initialPoolSize" value="1"/>
+				<!-- 指定连接数据库连接池的连接的最大空闲时间 -->
+				<property name="maxIdleTime" value="60"/>
+			</bean>
+           
+           <!-- SessionFactory -->
+           <bean id="sessionFactory" class="org.springframework.orm.hibernate3.LocalSessionFactoryBean">
+           		<property name="dataSource" ref="dataSource"/>
+           		<property name="mappingResources">
+           			<list>
+           				<value>com/input/pojo/RollFiles.hbm.xml</value>
+           			</list>
+           		</property>
+           		<property name="hibernateProperties">
+           			<value>
+           				hibernate.dialect=org.hibernate.dialect.MySQLDialect
+						hibernate.hbm2ddl.auto=update
+						hibernate.show_sql=true
+						hibernate.format_sql=true;
+           			</value>
+           		</property>
+           </bean>
+           
+           <!-- rollFileDao -->
+           <bean name="rollFileDao" class="com.input.dao.imple.RollFileDaoImple">
+           		<property name="sessionFactory" ref="sessionFactory"/>
+           </bean>
+           <!-- rollFileService -->
+           <bean name="rollFileService" class="com.input.service.imple.RollFileServiceImple">
+           		<property name="rollFileDao" ref="rollFileDao"/>
+           </bean>
+           <!-- rollFileAction -->
+           <bean name="rollFileAction" class="com.input.action.RollFilesAction">
+           		<property name="rollFileService" ref="rollFileService"/>
+           </bean>
+</beans>

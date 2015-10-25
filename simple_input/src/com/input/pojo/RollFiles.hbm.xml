@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+	<hibernate-mapping package="com.input.pojo">
+		<class name="RollFiles" table="tb_rollFiles">
+			<id name="id" column="id_rf" length="5" type="java.lang.Integer"></id>
+			<!-- 类属性 -->
+			<property name="themeName" length="100" />
+			<property name="responser" length="20" />
+			<property name="fileDate"  length="20" />
+			<property name="pageNo"  length="10" />
+			<property name="fileNo"  length="20" />
+			<property name="no"  length="10" />
+			<property name="catalogNo"  length="20" />
+			<property name="term"   length="20" />
+			<property name="qzh"  length="20" />
+			<property name="rollYear"   length="10" />
+			<property name="archiveNo" length="20" />
+			<property name="classNo"  length="20" />
+			<property name="keyWord"   length="50" />
+			<property name="inputOper" length="10" />
+			<property name="inputTime"  length="10" />
+			<property name="type"  length="10" />
+			<property name="secret"   length="10" />
+			<property name="rem"  length="50" />
+			<property name="time"  length="10" />
+			<property name="sysState" length="10" />
+		</class>
+	</hibernate-mapping>
